@@ -1,0 +1,33 @@
+test {
+    useJUnitPlatform()
+}
+
+configurations {
+    all*.exclude module: 'spring-boot-starter-logging'
+}
+
+dependencies {
+    api "org.springframework.boot:spring-boot-starter-security:${springbootVersion}"
+    api "org.springframework.boot:spring-boot-starter-web:${springbootVersion}"
+    api "org.springframework.boot:spring-boot-devtools:${springbootVersion}"
+    api "org.springframework.boot:spring-boot-configuration-processor:${springbootVersion}"
+    api "org.springframework.boot:spring-boot-starter-jdbc:${springbootVersion}"
+    api "com.fasterxml.jackson.core:jackson-core:${jacksonVersion}"
+    api "com.fasterxml.jackson.core:jackson-annotations:${jacksonVersion}"
+    api "com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}"
+    api "org.jboss.resteasy:resteasy-servlet-initializer:${resteasyVersion}"
+    api "org.jboss.resteasy:resteasy-jackson2-provider:${resteasyVersion}"
+    api "org.jboss.resteasy:resteasy-jaxb-provider:${resteasyVersion}"
+    api "org.infinispan:infinispan-core:${infinispanVersion}"
+    api "com.h2database:h2:${h2Version}"
+    api "org.freemarker:freemarker:${freemarkerVersion}"
+    api group: 'org.slf4j', name: 'slf4j-api', version: '1.7.28'
+
+    testImplementation("org.springframework.boot:spring-boot-starter-test:${springbootVersion}") {
+        exclude group: "org.junit"
+    }
+    testImplementation "org.junit.jupiter:junit-jupiter-api:5.5.2"
+    testImplementation "org.junit.jupiter:junit-jupiter:5.5.2"
+
+    implementation project(":embedded-keycloak-core")
+}

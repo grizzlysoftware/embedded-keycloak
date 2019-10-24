@@ -1,0 +1,10 @@
+dependencies {
+    api "org.keycloak:keycloak-model-infinispan:${keycloakVersion}"
+    api "org.keycloak:keycloak-services:${keycloakVersion}"
+    api "org.keycloak:keycloak-model-jpa:${keycloakVersion}"
+    api "org.keycloak:keycloak-js-adapter:${keycloakVersion}"
+    api "org.keycloak:keycloak-themes:${keycloakVersion}"
+    api "org.keycloak:keycloak-saml-core:${keycloakVersion}"
+    api "org.keycloak:keycloak-authz-policy-common:${keycloakVersion}"
+    api "org.liquibase:liquibase-core:${liquibaseVersion}"
+}

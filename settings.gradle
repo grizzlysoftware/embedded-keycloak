@@ -1,0 +1,3 @@
+rootProject.name = 'embedded-keycloak'
+include 'embedded-keycloak-core', 'embedded-keycloak-spring', 'embedded-keycloak-spring-example'
+

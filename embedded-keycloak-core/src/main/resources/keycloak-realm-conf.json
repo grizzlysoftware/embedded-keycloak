@@ -1,0 +1,74 @@
+{
+  "realm": "internal",
+  "enabled": true,
+  "sslRequired": "external",
+  "registrationAllowed": true,
+  "directGrantFlow": "direct grant",
+  "privateKey": "MIIEpAIBAAKCAQEAmZOsYw5fG6xJ6IlKoYBIJ47A7i20L+O5L0Wk7PgdqLK4nlTt9aZyyoAEU4GGFtn5nqdEr4ou9sOO2F36W99wmfnqsdMJS7lE/ONm0XAEbA1UacwUVRadCQTVx/KIrouQe3Pf70f3xjZI7zzvmfg4S6YZSLcp0J7wCAecpHoHucVGpYAov+i0+f5yB+2vJXTULAyEPMd0H+Lufqi5DsRrd5iBVOtp7ufp0NoUjdHKAJV9jqbqOgGYomNfcKpDXQiDegcqSBpITmTK9F86OXi6YNj4blgt/bGRUrbtXITDoUupS5SFezsxpWcpLx9sYkOFc2Im/ZdLMImBzON9xbAcVQIDAQABAoIBADcodLe3B622uWzNMoLCwieC/AQPYjH5Bh/WUZ/SlURrvCcRtc2OlJfqVqNvV6uJaj/zL5YkeS2jmwBW8H5ix9xliEeJ1kLeLcruGZWLN+te9jxxUbQlxQziMa34i+K0uZW9TmZwYKtN/+/84MlZ/04cP+R/9IK7MtaPdVEViwTLKQhDES3wgFFHWqJf5+QXwc4SD5+DYXiHvm6Fv1GB5DpJfR8eOBoBz4iBKspVdrwi4GuUz7mOqQ9nPSurIkvUYxlpI+qXUT6X8BjM8rnmhZRgGpd82C7VeE0vxlh4N16d15Po41+Q4OPhl8dMKFFL1Zci/U1i9loULxmd6EmLCtkCgYEA1Iv02LyRnrKntWLKKE70ON5TQtVLG8pA7dnO2LMTuxsjgo02pbz+QeurjHGfQnpPNEqNwB6jwnybnXt/0bGx+kAfzaKWMyoPQqyNmVVrwF/hyTKNeVqVlfphOsGlnwyhSuoB83mlGHAXMJMo3SXSmA/PyRXY1qZp57bvJ02QuPMCgYEAuPlqUhyvT4K/TMyGoE9Ae5G42HSGqqUwS0W6NQZ5Zebj5MegU/OuV8z8YQyC6dOQWI1/g/XtVAEaYzIiLbokzPxuCUYZFgNSyLlPS5d92opgdDa6zvXsVRvR135p8c1nSIBTK76sm11EAt3UPSvobGkRlwAU5piVLkNReyvCJ5cCgYAY+pG93vtmISzgfkmvzweYn1g9pH99NpnG2jAa+4C4Hopfz2S6ualP6fhxOvEyiNlCFfjuuSsZsjc/nMH6zN1TwbF7Iz5vqOO+PDUv7gAJzbrlQFGsD19BDvnaQ+PI+10BRtsP2B3070dqaAEHbGiBgmozAaRIJaqQlskoX09AzQKBgQCpQklAw9DDX++u1cQm8v4dVHWhU9daVPfBGRfPp5H0ZfeJBAY4a9XPr9oM8Abm8dm2vhu94458fNnphRlzYE6GaEJEKCmSVA4vcCoYEJJwJIkoLmB4Ot477s3wc1N8mKj21b3FXJ/TNt+iA9xO8Vunv+kBlGiLrXlssNrha2QpFwKBgQCBvWDruPohNRtM2cat5ytQE3FVHHvTQD9f04LE2Dmlfe/Ta1RUTKzqLCax+b9hD/9Jf1pb5O/aMFo0T1xxcPi9bB7xpKzG+Fg+7xUSnDsUwLWKnFpi0oUiBi8X1jFPv8Ls8ZsVT+nBfkBtzBFI59plLTnyQN14SpeOvPV5wV4UZQ==",
+  "publicKey": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmZOsYw5fG6xJ6IlKoYBIJ47A7i20L+O5L0Wk7PgdqLK4nlTt9aZyyoAEU4GGFtn5nqdEr4ou9sOO2F36W99wmfnqsdMJS7lE/ONm0XAEbA1UacwUVRadCQTVx/KIrouQe3Pf70f3xjZI7zzvmfg4S6YZSLcp0J7wCAecpHoHucVGpYAov+i0+f5yB+2vJXTULAyEPMd0H+Lufqi5DsRrd5iBVOtp7ufp0NoUjdHKAJV9jqbqOgGYomNfcKpDXQiDegcqSBpITmTK9F86OXi6YNj4blgt/bGRUrbtXITDoUupS5SFezsxpWcpLx9sYkOFc2Im/ZdLMImBzON9xbAcVQIDAQAB",
+  "requiredCredentials": [
+    "password"
+  ],
+  "users": [
+    {
+      "username": "admin",
+      "enabled": true,
+      "email": "admin@grizzlysoftware.pl",
+      "firstName": "Admin",
+      "lastName": "User",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "a"
+        }
+      ],
+      "realmRoles": [
+        "admin"
+      ],
+      "clientRoles": {
+        "account": []
+      }
+    }
+  ],
+  "roles": {
+    "realm": [
+      {
+        "name": "admin",
+        "description": ""
+      }
+    ]
+  },
+  "scopeMappings": [
+    {
+      "client": "example-client-frontend",
+      "roles": [
+        "user"
+      ]
+    }
+  ],
+  "clients": [
+    {
+      "clientId": "example-client-frontend",
+      "baseUrl": "/example-client-frontend",
+      "redirectUris": [
+        "/example-client-frontend/*",
+        "/example-client-backend/*"
+      ],
+      "webOrigins": [],
+      "directAccessGrantsEnabled": true,
+      "enabled": true,
+      "publicClient": true,
+      "fullScopeAllowed": true
+    }
+  ],
+  "clientScopeMappings": {
+    "account": [
+      {
+        "client": "example-client-frontend",
+        "roles": [
+          "view-profile"
+        ]
+      }
+    ]
+  }
+}
