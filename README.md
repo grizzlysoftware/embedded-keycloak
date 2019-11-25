@@ -65,8 +65,6 @@ Just annotate one of your configuration classes with: `@EnableEmbeddedKeycloakAu
 If you are still confused check out example project in this repository: `embedded-keycloak-spring-example`
 
 ### Use it!
-Currently it's not publicly available in maven central repository, however - stay tuned!
-
 Gradle
 ```
 compile group: 'pl.grizzlysoftware', name: 'embedded-keycloak-spring', version: '1.0.0'
@@ -86,9 +84,9 @@ Maven
 
 
 ## Troubleshooting
-I haven't found any troubles in running it with spring tests except one(as for today - 14.11.2019).
+I haven't found any troubles in running it with spring tests ~~~except one(as for today - 14.11.2019).
 Keycloak resolves datasource via JNDI so in order to provide our own datasource we have to mock it.
 The thing is that attempt to mock it second time causes error. I haven't got time to investigate it. However
 simple check whether the JNDI context factory does not solve the problem - Keycloak does not work as expected.
 Above situation may be caused when Spring Configuration is modified during tests execution - i.e. by overriding some beans. Then 
-spring instantiates configuration again because it doesn't match one that was instantiated before.
+spring instantiates configuration again because it doesn't match one that was instantiated before.~~ it is fixed as of embedded-keycloak-spring v1.0.1
