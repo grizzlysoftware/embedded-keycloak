@@ -35,6 +35,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
+import pl.grizzlysoftware.service.adapter.embedded.util.EmbeddedKeycloakInitialContext;
 import pl.grizzlysoftware.service.embedded.keycloak.EmbeddedKeycloakApplication;
 import pl.grizzlysoftware.service.embedded.keycloak.model.EmbeddedKeycloakServerProperties;
 
@@ -145,31 +146,12 @@ public class EmbeddedKeycloakConfig {
     }
 
     private void mockJndiEnvironment(DataSource dataSource) throws NamingException {
-        NamingManager.setInitialContextFactoryBuilder((env) -> (environment) -> new InitialContext() {
+        if (NamingManager.hasInitialContextFactoryBuilder()) {
+            EmbeddedKeycloakInitialContext initialContext = (EmbeddedKeycloakInitialContext) NamingManager.getInitialContext(null);
+            initialContext.setDataSource(dataSource);
+            return;
+        }
 
-            @Override
-            public Object lookup(Name name) {
-                return lookup(name.toString());
-            }
-
-            @Override
-            public Object lookup(String name) {
-                if ("spring/datasource".equals(name)) {
-                    return dataSource;
-                }
-
-                return null;
-            }
-
-            @Override
-            public NameParser getNameParser(String name) {
-                return CompositeName::new;
-            }
-
-            @Override
-            public void close() {
-                //NOOP
-            }
-        });
+        NamingManager.setInitialContextFactoryBuilder((env) -> environment -> new EmbeddedKeycloakInitialContext(dataSource));
     }
 }
