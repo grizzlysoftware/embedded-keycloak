@@ -20,25 +20,21 @@ subprojects {
         /* skipping projects that should not be published */
         return
     }
-    task snapshotVersion {
+    task artifactVersion {
         doFirst {
-            project.version += '-SNAPSHOT'
+            def releaseType = System.getenv("RELEASE_TYPE")
+            if (releaseType == 'SNAPSHOT') {
+                project.version += '-SNAPSHOT'
+            }
         }
     }
-    task publishSnapshot {
-        dependsOn 'snapshotVersion'
+    task publishArtifact {
         dependsOn 'clean'
+        dependsOn 'artifactVersion'
         dependsOn 'build'
         dependsOn 'publish'
-        tasks.findByName('snapshotVersion').mustRunAfter 'clean'
-        tasks.findByName('build').mustRunAfter 'snapshotVersion'
-        tasks.findByName('publish').mustRunAfter 'build'
-    }
-    task publishRelease {
-        dependsOn 'clean'
-        dependsOn 'build'
-        dependsOn 'publish'
-        tasks.findByName('build').mustRunAfter 'clean'
+        tasks.findByName('artifactVersion').mustRunAfter 'clean'
+        tasks.findByName('build').mustRunAfter 'artifactVersion'
         tasks.findByName('publish').mustRunAfter 'build'
     }
     task sourceJar(type: Jar) {
@@ -99,7 +95,8 @@ subprojects {
                 }
             }
             repositories {
-                if (project.version.endsWith("-SNAPSHOT")) {
+                def releaseType = System.getenv("RELEASE_TYPE")
+                if (releaseType == "SNAPSHOT") {
                     maven {
                         name 'OSS Sonatype Snapshot'
                         url 'https://oss.sonatype.org/content/repositories/snapshots'
@@ -108,7 +105,8 @@ subprojects {
                             password System.getenv('SONATYPE_PASSWORD')
                         }
                     }
-                } else {
+                }
+                if (releaseType == "RELEASE") {
                     maven {
                         name 'OSS Sonatype staging'
                         url 'https://oss.sonatype.org/service/local/staging/deploy/maven2'
