@@ -67,10 +67,10 @@ If you are still confused check out example project in this repository: `embedde
 ### Use it!
 Gradle
 ```
-compile group: 'pl.grizzlysoftware', name: 'embedded-keycloak-spring', version: '1.0.0'
+compile group: 'pl.grizzlysoftware', name: 'embedded-keycloak-spring', version: '1.0.1'
 ```
 ```
-compile 'pl.grizzlysoftware:embedded-keycloak-spring:1.0.0'
+compile 'pl.grizzlysoftware:embedded-keycloak-spring:1.0.1'
 ```
 Maven
 
