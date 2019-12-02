@@ -78,13 +78,13 @@ Maven
 <dependency>
     <groupId>pl.grizzlysoftware</groupId>
     <artifactId>embedded-keycloak-spring</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 </dependency>
 ```
 
 
 ## Troubleshooting
-I haven't found any troubles in running it with spring tests ~~~except one(as for today - 14.11.2019).
+I haven't found any troubles in running it with spring tests ~~except one(as for today - 14.11.2019).
 Keycloak resolves datasource via JNDI so in order to provide our own datasource we have to mock it.
 The thing is that attempt to mock it second time causes error. I haven't got time to investigate it. However
 simple check whether the JNDI context factory does not solve the problem - Keycloak does not work as expected.
